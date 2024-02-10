@@ -1,0 +1,33 @@
+package com.umlaut.crowd.internal;
+
+public enum w2 {
+    AUS,
+    CT,
+    CTDB,
+    IA,
+    NIR,
+    NF,
+    NFST,
+    RSS,
+    ST,
+    VC,
+    TEST,
+    MSG,
+    WEB,
+    RPL,
+    TTR,
+    NTR,
+    MPV,
+    MPA,
+    REG,
+    BWR,
+    LTR,
+    UTR,
+    TRC,
+    UIR,
+    VWT,
+    MPT,
+    WSR,
+    WWW,
+    YT
+}

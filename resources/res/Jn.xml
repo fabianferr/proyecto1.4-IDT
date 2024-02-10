@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="horizontal" android:id="@+id/fila" android:paddingLeft="16dp" android:paddingTop="10dp" android:paddingRight="16dp" android:paddingBottom="10dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <FrameLayout android:layout_gravity="center" android:layout_width="133dp" android:layout_height="100dp">
+        <ImageView android:layout_gravity="center" android:id="@+id/videoThumb" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginRight="5dp" android:scaleType="centerCrop" android:adjustViewBounds="true" android:layout_marginEnd="5dp"/>
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <View android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.4"/>
+            <ImageView android:layout_gravity="center" android:id="@+id/videoPlay" android:layout_width="0dp" android:layout_height="wrap_content" android:src="@drawable/play_pp" android:adjustViewBounds="true" android:layout_weight="0.2"/>
+            <View android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.4"/>
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="18dp" android:ellipsize="end" android:id="@+id/videoDescr" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="2" android:textIsSelectable="false"/>
+        <View android:id="@+id/videoDescrSep" android:layout_width="match_parent" android:layout_height="1dp"/>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="5dp">
+            <ImageView android:layout_gravity="center" android:id="@+id/videoUser" android:layout_width="30dp" android:layout_height="30dp" android:layout_marginRight="5dp" android:layout_marginEnd="5dp"/>
+            <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="16dp" android:ellipsize="end" android:id="@+id/videoName" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1" android:textIsSelectable="false"/>
+                <TextView android:textSize="16dp" android:id="@+id/videoDate" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxLines="1"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="16dp" android:id="@+id/videoDist" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1"/>
+        <TextView android:textSize="16dp" android:id="@+id/videoEstado" android:background="@drawable/borde_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1"/>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/ll_videoLikes" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_videoLikes" android:layout_width="wrap_content" android:layout_height="18dp" android:layout_marginRight="5dp" android:adjustViewBounds="true" android:drawable="@drawable/like" android:layout_marginEnd="5dp"/>
+            <TextView android:textSize="16dp" android:gravity="top" android:id="@+id/videoLikes" android:layout_width="wrap_content" android:layout_height="match_parent" android:maxLines="1"/>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/ll_videoVistos" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_videoVistos" android:layout_width="wrap_content" android:layout_height="18dp" android:layout_marginTop="2dp" android:layout_marginRight="5dp" android:adjustViewBounds="true" android:drawable="@drawable/eye" android:layout_marginEnd="5dp"/>
+            <TextView android:textSize="16dp" android:id="@+id/videoVistos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

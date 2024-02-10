@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="horizontal" android:id="@+id/suggested_apps_with_image_layout_container" android:paddingLeft="5dp" android:paddingRight="5dp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingHorizontal="5dp">
+    <ImageView android:id="@+id/left_image" android:visibility="gone" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginTop="3dp" android:layout_marginBottom="3dp" android:layout_weight="1" android:layout_marginVertical="3dp"/>
+    <FrameLayout android:id="@+id/suggested_apps_with_image_container" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="4"/>
+    <ImageView android:id="@+id/right_image" android:visibility="gone" android:layout_width="0dp" android:layout_height="match_parent" android:layout_marginTop="3dp" android:layout_marginBottom="3dp" android:layout_weight="1" android:layout_marginVertical="3dp"/>
+</LinearLayout>

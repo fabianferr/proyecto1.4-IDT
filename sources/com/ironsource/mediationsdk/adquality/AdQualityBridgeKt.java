@@ -1,0 +1,14 @@
+package com.ironsource.mediationsdk.adquality;
+
+import kotlin.Metadata;
+
+@Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0003\"\u000e\u0010\u0000\u001a\u00020\u0001XT¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0001XT¢\u0006\u0002\n\u0000\"\u000e\u0010\u0003\u001a\u00020\u0001XT¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001XT¢\u0006\u0002\n\u0000\"\u000e\u0010\u0005\u001a\u00020\u0006XT¢\u0006\u0002\n\u0000\"\u000e\u0010\u0007\u001a\u00020\u0006XT¢\u0006\u0002\n\u0000\"\u000e\u0010\b\u001a\u00020\u0006XT¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"AD_QUALITY_SDK_FAILED_TO_INITIALIZE_EVENT", "", "AD_QUALITY_SDK_INITIALIZED_SUCCESSFULLY_EVENT", "AD_QUALITY_SDK_WAS_ALREADY_INITIALIZED_EVENT", "INITIALIZING_AD_QUALITY_SDK_EVENT", "IRON_SOURCE_CUSTOM_SEGMENT_PREFIX", "", "IRON_SOURCE_IS_COPPA_KEY", "LEVEL_PLAY_MEDIATION_INITIALIZATION_SOURCE", "mediationsdk_release"}, k = 2, mv = {1, 7, 1}, xi = 48)
+public final class AdQualityBridgeKt {
+    private static final int AD_QUALITY_SDK_FAILED_TO_INITIALIZE_EVENT = 83;
+    private static final int AD_QUALITY_SDK_INITIALIZED_SUCCESSFULLY_EVENT = 81;
+    private static final int AD_QUALITY_SDK_WAS_ALREADY_INITIALIZED_EVENT = 82;
+    private static final int INITIALIZING_AD_QUALITY_SDK_EVENT = 80;
+    private static final String IRON_SOURCE_CUSTOM_SEGMENT_PREFIX = "custom_";
+    private static final String IRON_SOURCE_IS_COPPA_KEY = "is_coppa";
+    private static final String LEVEL_PLAY_MEDIATION_INITIALIZATION_SOURCE = "LevelPlay";
+}

@@ -1,0 +1,24 @@
+package androidx.media3.exoplayer;
+
+public final class RendererConfiguration {
+    public static final RendererConfiguration DEFAULT = new RendererConfiguration(false);
+    public final boolean tunneling;
+
+    public RendererConfiguration(boolean z) {
+        this.tunneling = z;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && getClass() == obj.getClass() && this.tunneling == ((RendererConfiguration) obj).tunneling) {
+            return true;
+        }
+        return false;
+    }
+
+    public int hashCode() {
+        return this.tunneling ^ true ? 1 : 0;
+    }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:id="@+id/layout_root" android:padding="10dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView android:textSize="17sp" android:id="@+id/message" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <EditText android:textSize="17sp" android:id="@+id/et_contra" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="100dp" android:inputType="textPassword" android:textCursorDrawable="@null"/>
+    <TextView android:textSize="17sp" android:textColor="#ffff0000" android:id="@+id/message_error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/contra_ko"/>
+    <CheckBox android:textStyle="normal|bold|italic" android:id="@+id/skip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:text="@string/nomostrarmas"/>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/rl_cab" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_tit" android:paddingLeft="16dp" android:paddingTop="16dp" android:paddingRight="16dp" android:paddingBottom="16dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+        <FrameLayout android:id="@+id/fl_cab_card" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@+id/iv_cab_card" android:layout_width="wrap_content" android:layout_height="wrap_content" android:adjustViewBounds="true"/>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/pb_logo" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp"/>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/pb_logo_inv" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" style="@style/pb_inverse"/>
+        </FrameLayout>
+        <LinearLayout android:gravity="left|center_vertical|center_horizontal|center|start" android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@+id/ll_tit_2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:layout_gravity="left|center_vertical|center_horizontal|center|start" android:id="@+id/tv_tit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2"/>
+            <TextView android:layout_gravity="left|center_vertical|center_horizontal|center|start" android:id="@+id/tv_subtit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/ll_btn" android:padding="8dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
+        <FrameLayout android:id="@+id/fl_btn" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:adjustViewBounds="true" android:maxWidth="100dp" android:maxHeight="100dp"/>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/pb_btn" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp"/>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/pb_btn_inv" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" style="@style/pb_inverse"/>
+        </FrameLayout>
+        <TextView android:layout_gravity="center_vertical" android:id="@+id/tv_btn" android:padding="12dp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/drawer_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_princ" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:orientation="horizontal" android:id="@+id/barratop" android:background="#ffffffff" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:orientation="horizontal" android:id="@+id/ll_filtros" android:background="#ffffffff" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginRight="70dp" android:layout_alignParentLeft="true" android:layout_centerInParent="true" android:layout_marginEnd="70dp" android:layout_alignParentStart="true">
+                <ImageView android:id="@+id/iv_filtro" android:layout_width="wrap_content" android:layout_height="30dp" android:src="@drawable/filtro" android:adjustViewBounds="true" android:layout_alignParentLeft="true" android:layout_centerInParent="true" android:layout_alignParentStart="true"/>
+                <TextView android:textColor="#ff000000" android:id="@+id/tv_filtrar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp" android:text="@string/filtrar" android:maxLines="1" android:layout_toRightOf="@+id/iv_filtro" android:layout_centerInParent="true" android:layout_toEndOf="@+id/iv_filtro"/>
+                <TextView android:textColor="#ff000000" android:id="@+id/tv_ftipo" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp" android:maxLines="1" android:layout_toRightOf="@+id/tv_filtrar" android:layout_centerInParent="true" android:layout_toEndOf="@+id/tv_filtrar"/>
+                <TextView android:textColor="#ff000000" android:ellipsize="end" android:id="@+id/tv_fcat" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp" android:maxLines="1" android:layout_toRightOf="@+id/tv_ftipo" android:layout_centerInParent="true" android:layout_toEndOf="@+id/tv_ftipo"/>&quot; 
+            </RelativeLayout>
+            <ImageView android:id="@+id/btnperfil" android:visibility="gone" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:layout_marginBottom="5dp" android:src="@drawable/perfil" android:layout_alignParentRight="true" android:layout_centerInParent="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/barratop_usu" android:background="#ffffffff" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_cerrar" android:layout_width="50dp" android:layout_height="50dp" android:layout_margin="10dp" android:src="@drawable/close_black"/>
+            <TextView android:textSize="16dp" android:textColor="#ff000000" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@+id/tv_nombreusu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:maxLines="1"/>
+        </LinearLayout>
+        <View android:background="#ffe0e0e0" android:layout_width="match_parent" android:layout_height="1dp"/>
+        <RelativeLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <RelativeLayout android:id="@+id/rl_fondo" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/navigation_b">
+                <ImageView android:id="@+id/iv_fondo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true"/>
+                <FrameLayout android:id="@+id/fl_videos" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/ll_ad">
+                    <androidx.recyclerview.widget.RecyclerView android:id="@+id/my_recycler_view" android:scrollbars="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:divider="#ff0000"/>
+                    <ProgressBar android:layout_gravity="bottom|center_vertical|center_horizontal|center" android:id="@+id/pb_videos" android:visibility="gone" android:layout_width="38dp" android:layout_height="38dp" android:layout_margin="10dp"/>
+                    <ImageView android:layout_gravity="bottom|right|center_vertical|center_horizontal|center|end" android:id="@+id/btncrearvid" android:layout_width="56dp" android:layout_height="56dp" android:layout_margin="20dp" android:src="@drawable/mas_btn"/>
+                </FrameLayout>
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@+id/ll_ad" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+            <include layout="@layout/bottom_menu"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <ListView android:layout_gravity="start" android:id="@+id/left_drawer" android:layout_width="240dp" android:layout_height="match_parent" android:choiceMode="singleChoice"/>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/drawer_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_princ" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ScrollView android:id="@+id/sc_pro" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <LinearLayout android:orientation="vertical" android:paddingBottom="20dp" android:layout_width="match_parent" android:layout_height="match_parent">
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <ImageView android:id="@+id/iv_usu" android:layout_width="match_parent" android:layout_height="250dp" android:scaleType="centerCrop" android:adjustViewBounds="true"/>
+                    <ProgressBar android:id="@+id/pb_foto" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" android:layout_margin="10dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentStart="true"/>
+                    <ProgressBar android:id="@+id/pb_foto_inv" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" android:layout_margin="10dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentStart="true" style="@style/pb_inverse"/>
+                    <ImageView android:id="@+id/iv_ban" android:background="#ff000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10dp" android:src="@drawable/spam_2" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_alignParentEnd="true"/>
+                    <LinearLayout android:orientation="vertical" android:id="@+id/ll_usugrid" android:background="#66000000" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignBottom="@+id/iv_usu">
+                        <View android:id="@+id/v_aux1" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="26dp"/>
+                        <View android:id="@+id/v_aux2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="24dp"/>
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TextView android:textSize="18dp" android:textColor="#ffffffff" android:id="@+id/tv_tit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true"/>
+                            <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_conectado" android:visibility="gone" android:layout_width="15dp" android:layout_height="15dp" android:layout_marginLeft="5dp" android:src="@drawable/green_indicator" android:layout_marginStart="5dp"/>
+                        </LinearLayout>
+                        <TextView android:textSize="16dp" android:textColor="#ffffffff" android:id="@+id/tv_subtit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true"/>
+                        <TextView android:textSize="14dp" android:textColor="#ffffffff" android:id="@+id/descr" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <TextView android:textSize="16dp" android:textColor="#fff" android:gravity="center_vertical" android:id="@+id/tv_likes_n" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="190dp" android:text="" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:fontFamily="sans-serif" android:layout_marginEnd="190dp" android:layout_alignParentEnd="true"/>
+                    <TextView android:textSize="16dp" android:textColor="#fff" android:gravity="center_vertical" android:id="@+id/tv_likes_self" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:text="" android:drawableRight="@drawable/favorito_pp" android:drawablePadding="2dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:drawableEnd="@drawable/favorito_pp" android:fontFamily="sans-serif" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+                    <ImageView android:id="@+id/iv_favorito" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="130dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_marginEnd="130dp" android:layout_alignParentEnd="true"/>
+                    <FrameLayout android:id="@+id/fl_trophy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="70dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_marginEnd="70dp" android:layout_alignParentEnd="true">
+                        <ImageView android:id="@+id/iv_trophy_base" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_base"/>
+                        <ImageView android:id="@+id/iv_trophy_n" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/trophy_n"/>
+                        <ImageView android:id="@+id/iv_trophy_b" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/trophy_b"/>
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10dp" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true">
+                        <ImageView android:id="@+id/iv_btn_fondo_n" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_n"/>
+                        <ImageView android:id="@+id/iv_btn_fondo_b" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_b"/>
+                        <ImageView android:id="@+id/iv_privado" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    </FrameLayout>
+                    <View android:layout_width="match_parent" android:layout_height="27dp" android:layout_below="@+id/ll_usugrid"/>
+                </RelativeLayout>
+                <include layout="@layout/profile_fotos"/>
+                <include layout="@layout/profile_videos"/>
+                <LinearLayout android:orientation="vertical" android:id="@+id/ll_nat" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="22dp" android:layout_marginTop="5dp" android:layout_marginRight="20dp" android:layout_marginBottom="20dp">
+                    <TextView android:textStyle="bold" android:textColor="#ffffffff" android:id="@+id/tv_appreco" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5dp" android:text="@string/appreco" android:textAllCaps="true"/>
+                    <LinearLayout android:orientation="vertical" android:id="@+id/ll_nat_ad" android:paddingRight="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingEnd="5dp"/>
+                </LinearLayout>
+                <TextView android:textStyle="bold" android:textColor="#ffffffff" android:id="@+id/tv_coments" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="22dp" android:layout_marginBottom="10dp" android:text="@string/comentariospub" android:layout_marginStart="22dp"/>
+                <RelativeLayout android:orientation="horizontal" android:id="@+id/rl_enviarcoment" android:padding="6dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginRight="20dp">
+                    <ImageView android:layout_gravity="top|center_vertical|center_horizontal|center" android:id="@+id/iv_usucoment_self" android:layout_width="40dp" android:layout_height="40dp" android:adjustViewBounds="true"/>
+                    <LinearLayout android:layout_gravity="top" android:orientation="vertical" android:id="@+id/ll_usucoment_self" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:layout_marginRight="45dp" android:layout_toRightOf="@+id/iv_usucoment_self" android:layout_marginStart="6dp" android:layout_marginEnd="45dp" android:layout_toEndOf="@+id/iv_usucoment_self">
+                        <TextView android:textStyle="bold" android:id="@+id/tv_tu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tu" android:singleLine="true"/>
+                        <FrameLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+                            <EditText android:id="@+id/et_coment_self" android:layout_width="match_parent" android:layout_height="wrap_content" android:singleLine="true" android:maxLength="255" android:inputType="none|text|textCapSentences|textAutoCorrect|textShortMessage" android:textCursorDrawable="@null"/>
+                            <ProgressBar android:layout_gravity="center_vertical" android:id="@+id/pb_chat_env" android:visibility="gone" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="10dp" android:layout_marginStart="10dp"/>
+                            <ProgressBar android:layout_gravity="center_vertical" android:id="@+id/pb_chat_env_inv" android:visibility="gone" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="10dp" android:layout_marginStart="10dp" style="@style/pb_inverse"/>
+                        </FrameLayout>
+                    </LinearLayout>
+                    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5dp" android:layout_alignBottom="@+id/ll_usucoment_self" android:layout_alignParentRight="true" android:layout_alignParentEnd="true">
+                        <ImageView android:id="@+id/iv_enviarcom_fondo_n" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_p_n"/>
+                        <ImageView android:id="@+id/iv_enviarcom_fondo_b" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_p_b"/>
+                        <ImageView android:id="@+id/iv_enviarcoment" android:layout_width="wrap_content" android:layout_height="wrap_content" android:rotationY="@integer/angle_rtl_180"/>
+                    </FrameLayout>
+                </RelativeLayout>
+                <LinearLayout android:orientation="vertical" android:id="@+id/ll_coments" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="20dp" android:layout_marginRight="20dp"/>
+                <FrameLayout android:id="@+id/fl_mascoments" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="22dp" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" android:layout_marginStart="22dp">
+                    <ImageView android:id="@+id/iv_mascoments_fondo_n" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_p_n"/>
+                    <ImageView android:id="@+id/iv_mascoments_fondo_b" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_p_b"/>
+                    <ImageView android:id="@+id/iv_mascoments" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </FrameLayout>
+                <ProgressBar android:id="@+id/pb_mascoments" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="22dp" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" android:layout_marginStart="22dp"/>
+                <ProgressBar android:id="@+id/pb_mascoments_inv" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginLeft="22dp" android:layout_marginTop="5dp" android:layout_marginBottom="10dp" android:layout_marginStart="22dp" style="@style/pb_inverse"/>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@+id/ll_ad" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <include layout="@layout/bottom_menu"/>
+    </LinearLayout>
+    <ListView android:layout_gravity="start" android:id="@+id/left_drawer" android:layout_width="240dp" android:layout_height="match_parent" android:choiceMode="singleChoice"/>
+</androidx.drawerlayout.widget.DrawerLayout>

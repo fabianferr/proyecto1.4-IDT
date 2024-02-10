@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/drawer_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_princ" android:layout_width="match_parent" android:layout_height="match_parent">
+        <LinearLayout android:gravity="center_horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="30dp">
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_contenido" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textStyle="bold" android:id="@+id/tv_codigo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/codigo_invit" android:layout_centerVertical="true"/>
+                    <EditText android:id="@+id/et_cod" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:minEms="4" android:maxLength="4" android:layout_toRightOf="@+id/tv_codigo" android:layout_centerVertical="true" android:inputType="textCapCharacters" android:textCursorDrawable="@null" android:layout_marginStart="10dp" android:layout_toEndOf="@+id/tv_codigo"/>
+                </RelativeLayout>
+                <TextView android:textStyle="bold" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@+id/btn_enviar" android:background="#666666" android:padding="10dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:layout_marginBottom="10dp" android:text="@string/enviar" android:textAllCaps="true"/>
+                <TextView android:layout_gravity="center_horizontal" android:id="@+id/tv_solicita" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/solicitar_acceso"/>
+            </LinearLayout>
+            <ProgressBar android:layout_gravity="center" android:id="@+id/pb" android:visibility="gone" android:layout_width="40dp" android:layout_height="40dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

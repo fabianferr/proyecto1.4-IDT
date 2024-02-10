@@ -1,0 +1,82 @@
+package com.mbridge.msdk.video.bt.module;
+
+import android.content.Context;
+import android.content.res.Configuration;
+import android.util.AttributeSet;
+import android.util.Base64;
+import android.webkit.WebView;
+import com.appnext.core.Ad;
+import com.ironsource.mediationsdk.impressionData.ImpressionData;
+import com.mbridge.msdk.mbsignalcommon.windvane.g;
+import com.mbridge.msdk.video.bt.a.c;
+import com.unity3d.services.ads.adunit.AdUnitActivity;
+import org.json.JSONObject;
+
+public class MBridgeBTLayout extends BTBaseView {
+    private WebView p;
+
+    public void init(Context context) {
+    }
+
+    public void onDestory() {
+    }
+
+    public MBridgeBTLayout(Context context) {
+        super(context);
+    }
+
+    public MBridgeBTLayout(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+    }
+
+    public void setWebView(WebView webView) {
+        this.p = webView;
+    }
+
+    public void onConfigurationChanged(Configuration configuration) {
+        if (this.p != null) {
+            try {
+                if (this.b == null || !this.b.isDynamicView()) {
+                    JSONObject jSONObject = new JSONObject();
+                    if (configuration.orientation == 2) {
+                        jSONObject.put(AdUnitActivity.EXTRA_ORIENTATION, Ad.ORIENTATION_LANDSCAPE);
+                    } else {
+                        jSONObject.put(AdUnitActivity.EXTRA_ORIENTATION, Ad.ORIENTATION_PORTRAIT);
+                    }
+                    jSONObject.put(ImpressionData.IMPRESSION_DATA_KEY_INSTANCE_ID, this.d);
+                    g.a().a(this.p, AdUnitActivity.EXTRA_ORIENTATION, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void onBackPressed() {
+        if (this.p != null) {
+            c.a().a(this.p, "onSystemBackPressed", this.d);
+        }
+    }
+
+    public void broadcast(String str, JSONObject jSONObject) {
+        if (this.p != null) {
+            try {
+                JSONObject jSONObject2 = new JSONObject();
+                jSONObject2.put("code", n);
+                jSONObject2.put("id", getInstanceId());
+                jSONObject2.put("eventName", str);
+                jSONObject2.put("data", jSONObject);
+                g.a().a(this.p, "broadcast", Base64.encodeToString(jSONObject2.toString().getBytes(), 2));
+            } catch (Exception unused) {
+                c.a().a(this.p, "broadcast", getInstanceId());
+            }
+        }
+    }
+
+    public void notifyEvent(String str) {
+        WebView webView = this.p;
+        if (webView != null) {
+            a(webView, str, this.d);
+        }
+    }
+}
