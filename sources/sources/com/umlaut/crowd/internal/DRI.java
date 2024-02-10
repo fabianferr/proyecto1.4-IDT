@@ -1,0 +1,150 @@
+package com.umlaut.crowd.internal;
+
+import com.umlaut.crowd.enums.ConnectionTypes;
+import com.umlaut.crowd.enums.NetworkTypes;
+import com.umlaut.crowd.enums.ThreeState;
+import java.io.Serializable;
+
+public class DRI implements Cloneable, Serializable {
+    public static final Integer INVALID = Integer.MAX_VALUE;
+    private static final long a = 4817758379835440169L;
+    public int ARFCN;
+    public String Bandwidth;
+    public tb CarrierAggregation;
+    public String CdmaBaseStationId;
+    public String CdmaBaseStationLatitude;
+    public String CdmaBaseStationLongitude;
+    public int CdmaEcIo;
+    public String CdmaNetworkId;
+    public String CdmaSystemId;
+    public ConnectionTypes ConnectionType;
+    public NetworkTypes DisplayNetworkType;
+    public j2 DuplexMode;
+    public int EcN0;
+    public y2 FlightMode;
+    public int GsmBitErrorRate;
+    public String GsmCellId;
+    public int GsmCellIdAge;
+    public y0 GsmCellIdSource;
+    public String GsmLAC;
+    public transient boolean IsDefaultDataSim = true;
+    public transient boolean IsDefaultVoiceSim = true;
+    public tb IsMetered;
+    public boolean IsRoaming;
+    public int IsVpn;
+    public int LteCqi;
+    public int LtePci;
+    public int LteRsrp;
+    public int LteRsrq;
+    public int LteRssi;
+    public int LteRssnr;
+    public String MCC;
+    public String MNC;
+    public tb ManualSelection;
+    public boolean MissingPermission;
+    public t1 MobileDataConnectionState;
+    public ThreeState MobileDataEnabled;
+    public int NativeDbm;
+    public c6[] NeighboringCells;
+    public NetworkTypes NetworkType;
+    public int NrARFCN;
+    public tb NrAvailable;
+    public long NrCellId;
+    public int NrCellIdAge;
+    public int NrCsiRsrp;
+    public int NrCsiRsrq;
+    public int NrCsiSinr;
+    public int NrPci;
+    public int NrSsRsrp;
+    public int NrSsRsrq;
+    public int NrSsSinr;
+    public o6 NrState;
+    public int NrTac;
+    public String OperatorName;
+    public z6 PreferredNetwork;
+    public String PrimaryScramblingCode;
+    public int RSCP;
+    public int RXLevel;
+    public int RXLevelAge;
+    public g9 ServiceState;
+    public int ServiceStateAge;
+    public int SubscriptionId;
+
+    public DRI() {
+        NetworkTypes networkTypes = NetworkTypes.Unknown;
+        this.NetworkType = networkTypes;
+        this.DisplayNetworkType = networkTypes;
+        this.ServiceState = g9.Unknown;
+        this.GsmLAC = "";
+        this.GsmCellId = "";
+        this.GsmCellIdAge = -1;
+        this.GsmCellIdSource = y0.Unknown;
+        Integer num = INVALID;
+        this.GsmBitErrorRate = num.intValue();
+        this.CdmaBaseStationId = "";
+        this.CdmaBaseStationLatitude = "";
+        this.CdmaBaseStationLongitude = "";
+        this.CdmaSystemId = "";
+        this.CdmaNetworkId = "";
+        this.CdmaEcIo = num.intValue();
+        this.NativeDbm = num.intValue();
+        this.RXLevelAge = -1;
+        this.MCC = "";
+        this.MNC = "";
+        this.FlightMode = y2.Unknown;
+        this.ConnectionType = ConnectionTypes.Unknown;
+        this.OperatorName = "";
+        this.RSCP = num.intValue();
+        this.ARFCN = -1;
+        this.Bandwidth = "";
+        this.EcN0 = 0;
+        this.PrimaryScramblingCode = "";
+        this.LteCqi = num.intValue();
+        this.LteRsrp = num.intValue();
+        this.LteRsrq = num.intValue();
+        this.LteRssnr = num.intValue();
+        this.LteRssi = num.intValue();
+        this.NrCsiRsrp = num.intValue();
+        this.NrCsiRsrq = num.intValue();
+        this.NrCsiSinr = num.intValue();
+        this.NrSsRsrp = num.intValue();
+        this.NrSsRsrq = num.intValue();
+        this.NrSsSinr = num.intValue();
+        this.LtePci = -1;
+        this.NrCellId = -1;
+        this.NrTac = -1;
+        this.NrPci = -1;
+        this.NrCellIdAge = -1;
+        this.NrARFCN = -1;
+        this.NrState = o6.Unknown;
+        tb tbVar = tb.Unknown;
+        this.NrAvailable = tbVar;
+        this.IsRoaming = false;
+        this.IsMetered = tbVar;
+        this.IsVpn = -1;
+        this.MobileDataEnabled = ThreeState.Unknown;
+        this.MobileDataConnectionState = t1.Unknown;
+        this.MissingPermission = false;
+        this.SubscriptionId = -1;
+        this.PreferredNetwork = z6.Unknown;
+        this.DuplexMode = j2.Unknown;
+        this.ManualSelection = tbVar;
+        this.CarrierAggregation = tbVar;
+        this.ServiceStateAge = -1;
+        this.NeighboringCells = new c6[0];
+    }
+
+    public Object clone() throws CloneNotSupportedException {
+        DRI dri = (DRI) super.clone();
+        dri.NeighboringCells = new c6[this.NeighboringCells.length];
+        int i = 0;
+        while (true) {
+            c6[] c6VarArr = this.NeighboringCells;
+            if (i >= c6VarArr.length) {
+                return dri;
+            }
+            dri.NeighboringCells[i] = (c6) c6VarArr[i].clone();
+            i++;
+        }
+    }
+}

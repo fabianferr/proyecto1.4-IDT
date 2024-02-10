@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:id="@+id/layout_root" android:padding="10dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TableLayout android:padding="5dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/txtusu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/usuario"/>
+            <EditText android:textSize="16sp" android:id="@+id/et_usu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="140dp" android:singleLine="true" android:textCursorDrawable="@null"/>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/txtcontra" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/contra"/>
+            <EditText android:textSize="16sp" android:id="@+id/et_contra" android:layout_width="wrap_content" android:layout_height="wrap_content" android:width="140dp" android:inputType="textPassword" android:textCursorDrawable="@null"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/drawer_layout" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:orientation="vertical" android:id="@+id/ll_princ" android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:id="@+id/rl_fondo" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1">
+            <ImageView android:id="@+id/iv_fondo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true"/>
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_info" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <TextView android:id="@+id/tv_artist" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:id="@+id/tv_song" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@+id/ll_ad_rad" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="70dp" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+            <ScrollView android:id="@+id/sv_chat" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:id="@+id/rl_chat" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <LinearLayout android:orientation="vertical" android:id="@+id/llchat" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                    <View android:id="@+id/view_aux_1" android:layout_width="wrap_content" android:layout_height="48dp" android:layout_margin="3dp"/>
+                    <View android:id="@+id/view_aux_2" android:layout_width="wrap_content" android:layout_height="48dp" android:layout_margin="3dp"/>
+                    <LinearLayout android:orientation="horizontal" android:id="@+id/ll_edittext" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <FrameLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+                            <EditText android:id="@+id/c_mensaje" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:width="700dp" android:maxLength="150" android:inputType="none|text|textCapSentences|textAutoCorrect|textShortMessage" android:textCursorDrawable="@null"/>
+                            <ProgressBar android:layout_gravity="center_vertical" android:id="@+id/pb_chat_env" android:visibility="gone" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="10dp" android:layout_marginStart="10dp"/>
+                            <ProgressBar android:layout_gravity="center_vertical" android:id="@+id/pb_chat_env_inv" android:visibility="gone" android:layout_width="25dp" android:layout_height="25dp" android:layout_marginLeft="10dp" android:layout_marginStart="10dp" style="@style/pb_inverse"/>
+                        </FrameLayout>
+                        <ImageView android:layout_gravity="center_vertical" android:id="@+id/btnemotic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:src="@drawable/emoticono_sel" android:layout_marginStart="8dp"/>
+                        <FrameLayout android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="5dp" android:layout_marginRight="5dp" android:layout_marginBottom="5dp" android:layout_marginStart="8dp" android:layout_marginEnd="5dp">
+                            <ImageView android:id="@+id/iv_btn_fondo_n" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_p_n"/>
+                            <ImageView android:id="@+id/iv_btn_fondo_b" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_fondo_p_b"/>
+                            <ImageView android:id="@+id/btnenv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:rotationY="@integer/angle_rtl_180"/>
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <ImageView android:id="@+id/btn_verchat" android:visibility="gone" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp" android:src="@drawable/chat_secc" android:layout_alignParentRight="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@+id/ll_ad" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <include layout="@layout/bottom_menu"/>
+    </LinearLayout>
+    <ListView android:layout_gravity="start" android:id="@+id/left_drawer" android:layout_width="240dp" android:layout_height="match_parent" android:choiceMode="singleChoice"/>
+</androidx.drawerlayout.widget.DrawerLayout>

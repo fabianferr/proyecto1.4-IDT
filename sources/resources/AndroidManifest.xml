@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="9.8" android:installLocation="auto" android:compileSdkVersion="33" android:compileSdkVersionCodename="13" package="stikerwap.appdys" platformBuildVersionCode="33" platformBuildVersionName="13">
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="33"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+        <package android:name="com.whatsapp"/>
+        <package android:name="com.whatsapp.w4b"/>
+        <package android:name="app.phantom"/>
+        <package android:name="com.google.android.gms.policy_cast_dynamite"/>
+        <intent>
+            <action android:name="com.applovin.am.intent.action.APPHUB_SERVICE"/>
+        </intent>
+        <package android:name="com.facebook.katana"/>
+        <package android:name="com.google.android.apps.tv.launcherx"/>
+        <package android:name="com.google.android.tvlauncher"/>
+        <package android:name="com.google.android.tvrecommendations"/>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService"/>
+        </intent>
+        <package android:name="com.appnext.core"/>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-feature android:glEsVersion="20000" android:required="true"/>
+    <permission android:name="stikerwap.appdys.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+    <uses-permission android:name="stikerwap.appdys.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+    <application android:theme="@style/AppTheme" android:label="StikerWap" android:icon="@drawable/ic_launcher" android:name="stikerwap.appdys.config" android:allowBackup="false" android:hardwareAccelerated="true" android:supportsRtl="true" android:fullBackupContent="false" android:usesCleartextTraffic="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+        <meta-data android:name="com.wortise.ads.utm" android:value="ac24"/>
+        <meta-data android:name="io.monedata.utm" android:value="ac24"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <uses-library android:name="com.google.android.maps" android:required="false"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:name="com.ironsource.sdk.controller.ControllerActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.ironsource.sdk.controller.InterstitialActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.ironsource.sdk.controller.OpenUrlActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true"/>
+        <provider android:name="com.ironsource.lifecycle.IronsourceLifecycleProvider" android:authorities="stikerwap.appdys.IronsourceLifecycleProvider"/>
+        <meta-data android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" android:value="stikerwap.appdys.CastOptionsProvider"/>
+        <meta-data android:name="android.app.default_searchable" android:value=".SearchableActivity"/>
+        <provider android:name="stikerwap.appdys.MySuggestionProvider" android:exported="false" android:authorities="stikerwap.appdys.MySuggestionProvider"/>
+        <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="barcode"/>
+        <provider android:name="stikerwap.appdys.StickerContentProvider" android:readPermission="com.whatsapp.sticker.READ" android:enabled="false" android:exported="true" android:authorities="stikerwap.appdys.stickercontentprovider"/>
+        <service android:name="stikerwap.appdys.s_widget_vistafb" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.preinicio" android:exported="true" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.google.android.gms.ads.AdActivity" android:exported="false" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity android:name="stikerwap.appdys.SearchableActivity" android:exported="false" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.ExpandedControlsActivity" android:exported="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_qr" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_vistafb" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_url" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_html" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_video" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:supportsPictureInPicture="true"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_video_exoplayer" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:supportsPictureInPicture="true"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_video_playerjs" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_video_pro" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_radio" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscchats" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscchats_lista" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_menugrid"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_submenu"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_submenu_ultimas"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_rss"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_rssdetalle"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_oficinas"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_chat_contra"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_chat" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.preperfil" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.chat_perfil" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.guardarprimeravez"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.eliminarperfil"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.codigo"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.chat"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.contactar"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscador_form" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.cats"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscador"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_detalle"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_menu"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_mapa_web" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_and"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.finalizar"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.notifs" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.notifs_cats" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.privados" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.profile" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.fotoperfil" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.fotogal" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscusus" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscvideos" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_buscvideo" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="adjustPan"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_gal" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_gal_foto" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:label="StikerWap" android:name="stikerwap.appdys.t_card" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="stikerwap.appdys.s_cargar_icos"/>
+        <service android:name="stikerwap.appdys.s_cargar_sliderheader"/>
+        <service android:name="stikerwap.appdys.s_cargar_fondo"/>
+        <service android:name="stikerwap.appdys.s_cargar_icos_gen"/>
+        <service android:name="stikerwap.appdys.s_guardarperfil"/>
+        <service android:name="stikerwap.appdys.s_mediaplayer_exo"/>
+        <service android:name="stikerwap.appdys.RegistrationIntentService"/>
+        <provider android:name="stikerwap.appdys.bd_provider" android:exported="false" android:multiprocess="true" android:authorities="stikerwap.appdys.bd_provider"/>
+        <provider android:name="androidx.core.content.FileProvider" android:exported="false" android:authorities="stikerwap.appdys.fileprovider" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths"/>
+        </provider>
+        <receiver android:name="stikerwap.appdys.alarma_rss"/>
+        <service android:name="stikerwap.appdys.MyFcmListenerService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:name="stikerwap.appdys.MyInstanceIDListenerService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/com_facebook_activity_theme" android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:name="com.facebook.CustomTabActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fbconnect" android:host="cct.stikerwap.appdys"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true"/>
+        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" android:exported="false"/>
+        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" android:exported="false"/>
+        <meta-data android:name="io.monedata.adapters.CellRebelAdapter" android:value="monedata-adapter"/>
+        <meta-data android:name="io.monedata.adapters.M2Adapter" android:value="monedata-adapter"/>
+        <receiver android:name="com.teragence.client.service.PresenceReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="teragencePartnerId" android:value="monedata-stikerwap.appdys"/>
+        <meta-data android:name="io.monedata.adapters.TeragenceAdapter" android:value="monedata-adapter"/>
+        <provider android:name="com.umlaut.crowd.InsightStarter" android:enabled="true" android:exported="false" android:authorities="stikerwap.appdys.insightstarter"/>
+        <service android:name="com.umlaut.crowd.service.ConnectivityService"/>
+        <service android:name="com.umlaut.crowd.service.InsightService"/>
+        <service android:name="com.umlaut.crowd.service.ConnectivityJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.umlaut.crowd.service.InsightJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="com.umlaut.crowd.service.BackgroundTestJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:name="com.umlaut.crowd.receiver.InsightReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+                <action android:name="android.hardware.usb.action.USB_STATE"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="io.monedata.adapters.UmlautAdapter" android:value="monedata-adapter"/>
+        <activity android:theme="@style/Theme.DeviceDefault.Light.DarkActionBar" android:label="Monedata" android:name="io.monedata.activities.AdaptersActivity"/>
+        <provider android:name="io.monedata.InitializationProvider" android:exported="false" android:authorities="stikerwap.appdys.monedata-startup"/>
+        <activity android:theme="@style/Theme.Wortise.DialogActivity" android:name="com.wortise.ads.consent.ConsentActivity"/>
+        <activity android:theme="@style/Theme.Wortise.Transparent" android:name="com.wortise.ads.events.ClickHandlerActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Black.NoTitleBar.Fullscreen" android:name="com.wortise.ads.interstitial.InterstitialActivity" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.wortise.ads.push.PushInterstitialActivity"/>
+        <provider android:name="com.wortise.ads.lifecycle.ActivityLifecycleInitializer" android:exported="false" android:multiprocess="true" android:authorities="stikerwap.appdys.wortise.lifecycle-activity"/>
+        <receiver android:name="com.wortise.ads.geofencing.GeofenceBroadcastReceiver" android:enabled="true" android:exported="true"/>
+        <provider android:name="com.applovin.sdk.AppLovinInitProvider" android:exported="false" android:authorities="stikerwap.appdys.applovininitprovider" android:initOrder="101"/>
+        <activity android:name="com.applovin.adview.AppLovinFullscreenActivity" android:exported="false" android:launchMode="singleTop" android:screenOrientation="behind" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true"/>
+        <activity android:name="com.applovin.sdk.AppLovinWebViewActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerDetailActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerMultiAdActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerAdUnitsListActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerAdUnitDetailActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerTestLiveNetworkActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <activity android:theme="@style/com.applovin.mediation.MaxDebuggerActivity.Theme" android:name="com.applovin.mediation.MaxDebuggerTestModeNetworkActivity" android:configChanges="locale|keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale"/>
+        <service android:name="com.applovin.impl.sdk.utils.AppKilledService" android:exported="false" android:stopWithTask="false"/>
+        <service android:name="com.applovin.impl.adview.activity.FullscreenAdService" android:exported="false" android:stopWithTask="false"/>
+        <activity android:theme="@style/Theme.NoTitleBar" android:name="com.ironsource.mediationsdk.testSuite.TestSuiteActivity" android:configChanges="orientation|screenSize" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.facebook.ads.AudienceNetworkActivity" android:exported="false" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize"/>
+        <provider android:name="com.facebook.ads.AudienceNetworkContentProvider" android:exported="false" android:authorities="stikerwap.appdys.AudienceNetworkContentProvider"/>
+        <activity android:theme="@style/Theme.AppCompat.NoActionBar.Translucent" android:name="com.google.android.tv.ads.controls.FallbackImageActivity" android:exported="false"/>
+        <provider android:name="com.google.android.gms.ads.MobileAdsInitProvider" android:exported="false" android:authorities="stikerwap.appdys.mobileadsinitprovider" android:initOrder="100"/>
+        <service android:name="com.google.android.gms.ads.AdService" android:enabled="true" android:exported="false"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.appnext.ads.interstitial.InterstitialActivity" android:exported="false" android:multiprocess="true" android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.appnext.ads.fullscreen.FullscreenActivity" android:exported="false" android:multiprocess="true" android:hardwareAccelerated="true"/>
+        <activity android:name="com.appnext.banners.BannerActivity" android:exported="false" android:screenOrientation="portrait"/>
+        <activity android:name="com.appnext.core.ResultActivity" android:exported="false" android:excludeFromRecents="true" android:launchMode="singleTop"/>
+        <activity android:name="com.appnext.core.result.ResultPageActivity" android:exported="false" android:excludeFromRecents="true" android:launchMode="singleTop" android:screenOrientation="portrait"/>
+        <receiver android:name="com.google.android.gms.measurement.AppMeasurementReceiver" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementService" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="true" android:exported="false"/>
+        <service android:name="com.google.firebase.components.ComponentDiscoveryService" android:exported="false" android:directBootAware="true">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:name="com.google.firebase.messaging.FirebaseMessagingService" android:exported="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:exported="false" android:excludeFromRecents="true"/>
+        <service android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:exported="true"/>
+        <receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.google.firebase.iid.FirebaseInstanceIdService" android:exported="true">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitActivity" android:exported="false" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitTransparentActivity" android:exported="false" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitTransparentSoftwareActivity" android:exported="false" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="false"/>
+        <activity android:theme="@style/Theme.NoTitleBar.Fullscreen" android:name="com.unity3d.services.ads.adunit.AdUnitSoftwareActivity" android:exported="false" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale" android:hardwareAccelerated="false"/>
+        <provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="stikerwap.appdys.androidx-startup">
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="com.unity3d.services.core.configuration.AdsSdkInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.work.WorkManagerInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+        </provider>
+        <receiver android:name="com.cellrebel.sdk.utils.PhoneStateReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:exported="false"/>
+        <provider android:name="com.google.firebase.provider.FirebaseInitProvider" android:exported="false" android:authorities="stikerwap.appdys.firebaseinitprovider" android:initOrder="100" android:directBootAware="true"/>
+        <activity android:name="com.m2catalyst.m2sdk.testing.ui.MainTestingActivity" android:exported="false"/>
+        <receiver android:name="com.m2catalyst.m2sdk.core.setup.ZombieInitializationSDKReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.os.action.DEVICE_IDLE_MODE_CHANGED"/>
+                <action android:name="SDK_AUTOCHECK_ACTION"/>
+                <action android:name="android.intent.action.REBOOT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.m2catalyst.m2sdk.data_transmission.TransmissionSDKReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="TRANSMISSION_INGESTION_ALARM"/>
+                <action android:name="BUILD_MONITOR_STATS"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.m2catalyst.m2sdk.data_collection.location.LocationSDKReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="RECURRENT_LOCATION_COLLECTION"/>
+                <action android:name="LOCATION_COLLECTION_UPDATE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.m2catalyst.m2sdk.core.setup.M2SDKOpsReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.m2catalyst.m2sdk.action.EXPORT_DB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.m2catalyst.m2sdk.data_collection.wifi.WifiSDKReceiver" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="WIFI_CONNECTIVITY_ENTRY_CREATION"/>
+                <action android:name="android.net.wifi.RSSI_CHANGED"/>
+                <action android:name="android.net.wifi.STATE_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <provider android:name="com.facebook.internal.FacebookInitProvider" android:exported="false" android:authorities="stikerwap.appdys.FacebookInitProvider"/>
+        <receiver android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.startapp.sdk.adsbase.consent.ConsentActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize"/>
+        <activity android:theme="@style/Theme" android:name="com.startapp.sdk.ads.list3d.List3DActivity"/>
+        <activity android:theme="@style/Theme.Translucent" android:name="com.startapp.sdk.ads.interstitials.OverlayActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize"/>
+        <service android:name="com.startapp.sdk.cachedservice.BackgroundService"/>
+        <service android:name="com.startapp.sdk.jobs.SchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:name="com.startapp.sdk.adsbase.remoteconfig.BootCompleteListener" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.vungle.ads.internal.ui.VungleActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:hardwareAccelerated="true"/>
+        <provider android:name="com.vungle.ads.internal.util.VungleProvider" android:exported="false" android:authorities="stikerwap.appdys.vungle-provider"/>
+        <service android:name="androidx.work.impl.background.systemalarm.SystemAlarmService" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:directBootAware="false"/>
+        <service android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:directBootAware="false"/>
+        <service android:name="androidx.work.impl.foreground.SystemForegroundService" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:directBootAware="false"/>
+        <receiver android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver" android:enabled="true" android:exported="false" android:directBootAware="false"/>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver" android:enabled="false" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP" android:enabled="true" android:exported="true" android:directBootAware="false">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/tt_landing_page" android:name="com.bytedance.sdk.openadsdk.activity.TTLandingPageActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_landing_page" android:name="com.bytedance.sdk.openadsdk.activity.TTPlayableLandingPageActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_landing_page" android:name="com.bytedance.sdk.openadsdk.activity.TTVideoLandingPageLink2Activity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.bytedance.sdk.openadsdk.activity.TTDelegateActivity" android:launchMode="standard"/>
+        <activity android:theme="@style/tt_privacy_landing_page" android:name="com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity" android:launchMode="standard" android:screenOrientation="portrait"/>
+        <service android:name="com.bytedance.sdk.openadsdk.multipro.aidl.BinderPoolService"/>
+        <activity android:theme="@style/tt_app_open_ad_no_animation" android:name="com.bytedance.sdk.openadsdk.activity.TTAppOpenAdActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_full_screen_new" android:name="com.bytedance.sdk.openadsdk.activity.TTRewardVideoActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_full_screen_new" android:name="com.bytedance.sdk.openadsdk.activity.TTRewardExpressVideoActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_full_screen_new" android:name="com.bytedance.sdk.openadsdk.activity.TTFullScreenVideoActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_full_screen_new" android:name="com.bytedance.sdk.openadsdk.activity.TTFullScreenExpressVideoActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_full_screen_interaction" android:name="com.bytedance.sdk.openadsdk.activity.TTInterstitialActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/tt_full_screen_interaction" android:name="com.bytedance.sdk.openadsdk.activity.TTInterstitialExpressActivity" android:launchMode="standard" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <service android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery" android:exported="false">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE" android:exported="false"/>
+        <receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false"/>
+        <service android:name="com.teragence.client.service.MetricsService" android:enabled="true" android:exported="true">
+            <intent-filter>
+                <action android:name="com.teragence.client.service.MetricsService"/>
+            </intent-filter>
+        </service>
+        <service android:label="Teragence service" android:name="com.teragence.client.service.MetricsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:name="androidx.room.MultiInstanceInvalidationService" android:exported="false" android:directBootAware="true"/>
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar" android:name="com.mbridge.msdk.reward.player.MBRewardVideoActivity" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:theme="@style/mbridge_transparent_common_activity_style" android:name="com.mbridge.msdk.activity.MBCommonActivity" android:exported="false" android:excludeFromRecents="true" android:configChanges="keyboard|orientation"/>
+        <activity android:name="com.mbridge.msdk.out.LoadingActivity"/>
+    </application>
+</manifest>
